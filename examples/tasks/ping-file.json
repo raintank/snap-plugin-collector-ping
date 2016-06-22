@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "schedule": {
+        "type": "simple",
+        "interval": "5s"
+    },
+    "workflow": {
+        "collect": {
+            "metrics": {
+                "/raintank/ping/*": {}
+            },
+            "config": {
+            	"/raintank/ping": {
+            		"hostname": "127.0.0.1"
+            	}
+            },
+            "process": null,
+            "publish": [
+                {
+                    "plugin_name": "file",
+                    "config": {
+                        "file": "/tmp/published_ping"
+                    }
+                }
+            ]
+        }
+    }
+}
