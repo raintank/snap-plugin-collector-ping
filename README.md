@@ -1,5 +1,5 @@
-# snap collector plugin - mysql
-This plugin collects metrics from MySQL database.  
+# snap collector plugin - ping
+This plugin collects Ping latency metrics.  
 
 It's used in the [snap framework](http://github.com:intelsdi-x/snap).
 
@@ -9,7 +9,6 @@ It's used in the [snap framework](http://github.com:intelsdi-x/snap).
   * [Installation](#installation)
   * [Configuration and Usage](#configuration-and-usage)
 2. [Documentation](#documentation)
-  * [Global Config](#global-config)
   * [Collected Metrics](#collected-metrics)
   * [Examples](#examples)
 3. [License](#license-and-authors)
@@ -46,14 +45,6 @@ This builds the plugin in `/build/rootfs/`
 * Load the plugin and create a task, see example in [Examples](https://github.com/raintank/snap-plugin-collector-ping/blob/master/README.md#examples).
 
 ## Documentation
-
-###Config
-Global configuration files are described in [snap's documentation](https://github.com/intelsdi-x/snap/blob/master/docs/SNAPD_CONFIGURATION.md). You have to add `"mysql"` section with following entries:
-
- - `"mysql_connection_string"` -  it's DSN with format described [here](https://github.com/go-sql-driver/mysql#dsn-data-source-name).  ex. `"root:r00tme@tcp(localhost:3306)/"` where `root` is username and `r00tme` is password, `localhost` is host address and `3306` is port where mysql is listening.
- -  `"mysql_use_innodb"` - possible values are `true` and `false`. Specifies if InnoDB statistics are collected. If you set this value to true and they are unavailable plugin will fail to start.
- 
-See exemplary Global configuration files in [examples/configs/] (https://github.com/intelsdi-x/snap-plugin-collector-mysql/blob/master/examples/configs/).
 
 ### Collected Metrics
 
