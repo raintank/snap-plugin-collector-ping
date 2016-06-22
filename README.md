@@ -1,0 +1,1 @@
+# snap-collector-plugin-ping
