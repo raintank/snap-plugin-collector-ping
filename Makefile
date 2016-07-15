@@ -1,7 +1,11 @@
 default:
+	$(MAKE) deps
 	$(MAKE) all
 test:
+	$(MAKE) deps
 	bash -c "./scripts/test.sh $(TEST)"
+deps:
+	go get ./...
 check:
 	$(MAKE) test
 all:
