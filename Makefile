@@ -5,7 +5,7 @@ test:
 	$(MAKE) deps
 	bash -c "./scripts/test.sh $(TEST)"
 deps:
-	go get ./...
+	bash -c "./scripts/deps.sh"
 check:
 	$(MAKE) test
 all:
