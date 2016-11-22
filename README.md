@@ -62,17 +62,17 @@ Other paths to files should be set according to your configuration, using a file
 
 In one terminal window, open the snap daemon (in this case with logging set to 1,  trust disabled and global configuration saved in config.json ):
 ```
-$ $SNAP_PATH/bin/snapd -l 1 -t 0 --config config.json
+$ $SNAP_PATH/bin/snapteld -l 1 -t 0 --config config.json
 ```
 
 In another terminal window:
 Load ping plugin
 ```
-$ $SNAP_PATH/bin/snapctl plugin load snap-plugin-collector-ping
+$ $SNAP_PATH/bin/snaptel plugin load snap-plugin-collector-ping
 ```
 See available metrics for your system
 ```
-$ $SNAP_PATH/bin/snapctl metric list
+$ $SNAP_PATH/bin/snaptel metric list
 ```
 
 Create a task manifest file  (exemplary files in [examples/tasks/] (https://github.com/raintank/snap-plugin-collector-ping/blob/master/examples/tasks/)):
@@ -108,7 +108,7 @@ Create a task manifest file  (exemplary files in [examples/tasks/] (https://gith
 ```
 Load file plugin for publishing:
 ```
-$ $SNAP_PATH/bin/snapctl plugin load $SNAP_PATH/plugin/snap-publisher-file
+$ $SNAP_PATH/bin/snaptel plugin load $SNAP_PATH/plugin/snap-plugin-publisher-file
 Plugin loaded
 Name: file
 Version: 3
@@ -119,7 +119,7 @@ Loaded Time: Fri, 20 Nov 2015 11:41:39 PST
 
 Create a task:
 ```
-$ $SNAP_PATH/bin/snapctl task create -t examples/tasks/ping-file.json
+$ $SNAP_PATH/bin/snaptel task create -t examples/tasks/ping-file.json
 Using task manifest to create task
 Task created
 ID: 02dd7ff4-8106-47e9-8b86-70067cd0a850
@@ -129,7 +129,7 @@ State: Running
 
 Stop previously created task:
 ```
-$ $SNAP_PATH/bin/snapctl task stop 02dd7ff4-8106-47e9-8b86-70067cd0a850
+$ $SNAP_PATH/bin/snaptel task stop 02dd7ff4-8106-47e9-8b86-70067cd0a850
 Task stopped:
 ID: 02dd7ff4-8106-47e9-8b86-70067cd0a850
 ```
